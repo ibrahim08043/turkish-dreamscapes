@@ -1,26 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/home/hero";
+import { LocationsSection } from "@/components/home/locations-section";
+import { FeaturedProperties } from "@/components/home/featured-properties";
+import { WhyTurkey } from "@/components/home/why-turkey";
+import { Testimonials } from "@/components/home/testimonials";
+import { AgentsPreview } from "@/components/home/agents-preview";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Nuralux — Luxury Real Estate in Türkiye" },
+      { name: "description", content: "Curated luxury villas, penthouses and estates across Istanbul, Bodrum, Antalya, Cappadocia and beyond." },
+      { property: "og:title", content: "Nuralux — Luxury Real Estate in Türkiye" },
+      { property: "og:description", content: "Curated luxury villas, penthouses and estates across Türkiye." },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <FeaturedProperties />
+      <LocationsSection />
+      <WhyTurkey />
+      <Testimonials />
+      <AgentsPreview />
+    </>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
