@@ -37,9 +37,6 @@ export function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-4 md:px-8 h-18 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="size-9 rounded-xl bg-gradient-luxury flex items-center justify-center shadow-luxury">
-              <Building2 className="size-5 text-gold-foreground" />
-            </div>
             <span className="font-display text-xl tracking-wide">
               Nura<span className="text-gradient-gold">lux</span>
             </span>
