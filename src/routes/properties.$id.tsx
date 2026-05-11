@@ -90,7 +90,7 @@ function PropertyDetails() {
               </AnimatePresence>
             </motion.button>
             <div className="grid grid-cols-4 md:grid-cols-1 gap-3">
-              {property.images.slice(0, 4).map((src, i) => (
+              {property.images.slice(0, 4).map((src: string, i: number) => (
                 <button key={i} onClick={() => setActiveImg(i)}
                   className={cn("relative rounded-xl overflow-hidden transition-all",
                     activeImg === i ? "ring-2 ring-gold" : "opacity-70 hover:opacity-100")}>
@@ -170,7 +170,7 @@ function PropertyDetails() {
               <TabsContent value="amenities" className="mt-6">
                 <motion.div variants={staggerContainer} initial="hidden" animate="show"
                   className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {property.amenities.map((a) => (
+                  {property.amenities.map((a: string) => (
                     <motion.div key={a} variants={staggerItem}
                       className="flex items-center gap-2 p-3 rounded-xl bg-card border">
                       <div className="size-7 rounded-full bg-gradient-luxury flex items-center justify-center">

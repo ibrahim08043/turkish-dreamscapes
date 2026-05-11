@@ -73,7 +73,7 @@ function BookingPage() {
               <FloatingInput label="Full name" {...register("fullName")} value={watch("fullName") ?? ""} error={errors.fullName?.message} />
               <FloatingInput label="Email" type="email" {...register("email")} value={watch("email") ?? ""} error={errors.email?.message} />
               <FloatingInput label="Phone" type="tel" {...register("phone")} value={watch("phone") ?? ""} error={errors.phone?.message} />
-              <FloatingInput label="Number of visitors" type="number" min={1} max={20} {...register("visitors")} value={watch("visitors") ?? ""} error={errors.visitors?.message} />
+              <FloatingInput label="Number of visitors" type="number" min={1} max={20} {...register("visitors", { valueAsNumber: true })} value={watch("visitors") ?? ""} error={errors.visitors?.message} />
               <FloatingInput label="Preferred date" type="date" {...register("date")} value={watch("date") ?? ""} error={errors.date?.message} />
               <FloatingInput label="Preferred time" type="time" {...register("time")} value={watch("time") ?? ""} error={errors.time?.message} />
             </div>

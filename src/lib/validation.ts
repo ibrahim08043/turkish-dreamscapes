@@ -6,7 +6,7 @@ export const bookingSchema = z.object({
   phone: z.string().trim().min(7, "Enter a valid phone number").max(30),
   date: z.string().min(1, "Select a preferred date"),
   time: z.string().min(1, "Select a preferred time"),
-  visitors: z.coerce.number().min(1, "At least 1 visitor").max(20),
+  visitors: z.number({ message: "Enter visitors" }).min(1, "At least 1 visitor").max(20),
   message: z.string().max(800).optional(),
 });
 export type BookingValues = z.infer<typeof bookingSchema>;
