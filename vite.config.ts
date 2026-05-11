@@ -4,7 +4,9 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 export default defineConfig({
   vite: {
     plugins: [
-      cloudflare({ viteEnvironment: { name: "ssr" } }),
+      cloudflare({
+        viteEnvironment: { name: "ssr" }
+      }),
     ],
   },
 });
